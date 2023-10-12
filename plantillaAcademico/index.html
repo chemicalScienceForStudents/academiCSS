@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html id="html" lang="es">
+    <head>
+        <title>Page title</title>
+        <!-- Only metadata -->
+        <meta charset="UTF-8">
+        <meta name="author" content="academiCSS Team">
+        <meta name="description" content="Section description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#0a1727"/>
+        <link rel="icon" type="image/x-icon" href="./media/">
+        <!-- Only prefetch required for section -->
+        <!-- Prefetch images for home -->   
+        <link rel="prefetch" href="./media/" >
+
+        <!-- Load styles and inmediate resources -->
+        <link rel="stylesheet" href="./css/app.css">
+
+        <!-- Preconnet files -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Font ref, make sure to add only used fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body id="body">
+        <main id="app">
+            <!-- HEADER SECTION (START) -->
+            <header class="header-container gradient-one">
+                <p class="fluid-font-big-paragraph">{{headerText}}</p>
+            </header>
+            <!-- HEADER SECTION (END) -->
+ 
+            <!-- MAIN SECTION (START) -->
+            <main class="main-container gradient-two">
+                <h1 class="fluid-font-title">Responsive Title</h1>
+                <h2 class="fluid-font-subtitle">Responsive Subitle</h2>
+                <h3 class="fluid-font-subsubtitle">Responsive Subsubitle</h3>
+                <h4 class="fluid-font-subsubsubtitle">Responsive Subsubsubitle</h4>
+                <p class="fluid-font-big-paragraph">Responsive Big Paragraph</p>
+                <p class="fluid-font-paragraph">Responsive Normal Paragraph</p>
+                <p class="fluid-font-small-paragraph">Responsive Small Paragraph</p>
+            </main>
+            <!-- MAIN SECTION (END) -->
+            <!-- FOOTER SECTION (START) -->
+            <footer class="footer-container gradient-three">  
+                <p class="fluid-font-small-paragraph">{{footerText}}</p>    
+            </footer>
+            <!-- FOOTER SECTION (END) -->
+        </main>
+    </body>
+    <!-- JS files for all sections -->
+    <script src="./js/vue.js" type="text/javascript" defer></script>
+    <script src="./js/app.js" type="text/javascript" defer></script>
+</html>

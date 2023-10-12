@@ -1,0 +1,275 @@
+/*****************************/
+/****** ROOT VARIABLES ******/
+/***************************/
+
+:root{
+    
+    /***************/
+    /*** COLORS ***/
+    /*************/
+
+    /* Page colors */
+    --blue:#14406c;
+    --dark-blue:#0a1727;
+    --dark-cream:#e2cd66;
+    --light-cream:#edd9b7;
+
+    /* Text colors */
+    --titles-color:white;
+    --paragraphs-color:rgba(255, 255, 255, 0.9);
+    
+    /******************/
+    /*** GRADIENTS ***/
+    /****************/
+
+    --gradient-one:linear-gradient(0deg, rgba(20,10,68,1) 0%, rgba(148,187,233,1) 100%);
+    --gradient-two:linear-gradient(90deg, rgba(20,10,68,1) 0%, rgba(148,187,233,1) 100%);
+    --gradient-three:linear-gradient(-90deg, rgba(20,10,68,1) 0%, rgba(0,0,0,1) 100%);
+            
+    /**************/
+    /*** SIZES ***/
+    /************/
+  
+    --header-height:50px;
+    --footer-heigth:100px;
+  
+    /*******************/
+    /*** FONT SIZES ***/
+    /*****************/
+  
+    /* Headers h1-h4 */
+    --min-title-size:30px;
+    --max-title-size:60px;
+    --min-subtitle-size: 25px;
+    --max-subtitle-size: 50px;
+    --min-subsubtitle-size: 20px;
+    --max-subsubtitle-size: 40px;
+    --min-subsubsubtitle-size: 15px;
+    --max-subsubsubtitle-size: 30px;
+
+    /* Paragraphs */
+    --min-big-paragraph-size: 20px;
+    --max-big-paragraph-size: 30px;
+    --min-paragraph-size: 15px;
+    --max-paragraph-size: 25px;
+    --min-small-paragraph-size: 10px;
+    --max-small-paragraph-size: 20px;
+
+    /**********************/
+    /*** MISCELLANEOUS ***/
+    /********************/
+
+    --body-font:sans-serif;
+    --titles-padding:10px;
+    --titles-margin:0px;
+    --paragraphs-padding:10px;
+    --paragraphs-margin:0px;
+
+}
+
+/***************************/
+/****** MOBILE FIRST ******/
+/*************************/
+
+/* This clasess work for mobiles and tablets in potrait */
+
+/*********************/
+/*** GENERAL TAGS ***/
+/*******************/
+
+.html, body{
+    margin: 0;
+    font-family: var(--body-font);
+    background: var(--gradient-two);
+}
+
+h1,h2,h3,h4{
+    margin: var(--titles-margin);
+    padding: var(--titles-padding);
+    color:var(--titles-color)
+}
+
+p{
+    margin: var(--paragraphs-margin);
+    padding: var(--paragraphs-padding);
+    color: var(--paragraphs-color);
+}
+
+/***********************/
+/*** HEADER SECTION ***/
+/*********************/
+
+.header-container{
+    height: var(--header-height);
+    background: var(--gradient-three);
+}
+
+
+/*********************/
+/*** MAIN SECTION ***/
+/*******************/
+
+.main-container{
+    /* For take the rest of screen in main we take 100% of height and remove header and footer height */
+    height: calc(100vh - 50px - 100px);
+}
+
+
+/***********************/
+/*** FOOTER SECTION ***/
+/*********************/
+
+.footer-container{
+    height: var(--footer-heigth);
+    background: var(--gradient-three);
+}
+
+/*************************/
+/*** RESPONSIVE FONTS ***/
+/***********************/
+
+/* NOTE THIS FONTS GIVE SUPPORT FROM IPHONE 5 TO DESKTOP WITH FULLHD RESOLUTION */
+/* This classes are the minimun value for this fonts */
+
+.fluid-font-title{
+    font-size: var(--min-title-size);
+}
+
+.fluid-font-subtitle{
+    font-size: var(--min-subtitle-size);
+}
+
+.fluid-font-subsubtitle{
+    font-size: var(--min-subsubtitle-size);
+}
+
+.fluid-font-subsubsubtitle{
+    font-size: var(--min-subsubsubtitle-size);
+}
+
+.fluid-font-big-paragraph{
+    font-size: var(--min-big-paragraph-size);
+}
+
+.fluid-font-paragraph{
+    font-size: var(--min-paragraph-size);
+}
+
+.fluid-font-small-paragraph{
+    font-size: var(--min-small-paragraph-size);
+}
+
+/* This classes are the incremental values for this fonts */
+/* sintax  linear responsive text [min font size + (max font size - min font size) * ((viewport width - min viewport width) / (max viewport width - min viewport width))] */
+/* Scren with a width equal or bigger than 320px  */
+
+@media screen and (min-width: 320px) {
+
+    .fluid-font-title{
+        font-size: calc(var(--min-title-size) + 30 * ((100vw - 320px) / 1600)) ;
+    }
+
+    .fluid-font-subtitle{
+        font-size: calc(var(--min-subtitle-size) + 25 * ((100vw - 320px) / 1600)) ;
+    }
+
+    .fluid-font-subsubtitle{
+        font-size: calc(var(--min-subsubtitle-size) + 20 * ((100vw - 320px) / 1600)) ;
+    }
+
+    .fluid-font-subsubsubtitle{
+        font-size: calc(var(--min-subsubsubtitle-size) + 15 * ((100vw - 320px) / 1600)) ;
+    }
+
+    .fluid-font-big-paragraph{
+        font-size: calc(var(--min-big-paragraph-size) + 10 * ((100vw - 320px) / 1600)) ;
+    }
+
+    .fluid-font-paragraph{
+        font-size: calc(var(--min-paragraph-size) + 10 * ((100vw - 320px) / 1600)) ;
+    }
+
+    .fluid-font-small-paragraph{
+        font-size: calc(var(--min-small-paragraph-size) + 10 * ((100vw - 320px) / 1600)) ;
+    }
+
+}
+
+
+/* This classes are the maximun value for this fonts */
+
+@media screen and (min-width: 1920px) {
+
+    .fluid-font-title{
+        font-size: var(--max-title-size);
+    }
+    
+    .fluid-font-subtitle{
+        font-size: var(--max-subtitle-size);
+    }
+    
+    .fluid-font-subsubtitle{
+        font-size: var(--max-subsubtitle-size);
+    }
+    
+    .fluid-font-subsubsubtitle{
+        font-size: var(--max-subsubsubtitle-size);
+    }
+    
+    .fluid-font-big-paragraph{
+        font-size: var(--max-big-paragraph-size);
+    }
+
+    .fluid-font-paragraph{
+        font-size: var(--max-paragraph-size);
+    }
+
+    .fluid-font-small-paragraph{
+        font-size: var(--max-small-paragraph-size);
+    }
+
+}
+  
+
+
+/******************************/
+/****** DESKTOP QUERIES ******/
+/****************************/
+
+/*************************************/
+/*** DESKTOP AND LANDSCAPE TABLET ***/
+/***********************************/
+
+/* This clasess work for desktops and tablets in landscape */
+
+/* Only break point */
+/* 
+ --------------------------  Explication -> ipad resolution is 768 x 1024px in vertical postion
+ |                        |                 is considered as a smartphone, but in 1024 x 768px 
+ |                        |                 is considered as a computer, this break point consider
+ |     916 x 412 px       |                 that only exist two design mobile or desktop,the bigger
+ |                        |                 resolution in phone founded was 411 x 915px, so we take
+ |                        |                 the limit values of resolution as following: width:915+1px
+ --------------------------                 and height:411+1px up this are computer down this are a phone
+*/
+
+@media (min-height:412px) and (min-width: 916px) {
+
+}
+
+
+
+/*************************/
+/*** LANDSCAPE MOBILE ***/
+/***********************/
+
+/* This clasess work for mobiles in landscape */
+
+/* Only works for mobiles in landscape with resulution of height : 412 px with width: > 412 px */
+/* Check max heigth 425 or 412*/
+
+@media (max-height:425px) and (orientation:landscape){
+
+
+
+}
